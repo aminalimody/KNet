@@ -3,8 +3,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="">
-    <img src="./front_end/src/images/grid_logo.jpg" alt="Logo" width="80" height="80">
+  <a href="./">
+    <img src="./front_end/src/images/grid_logo.jpg" alt="Logo" width="140" height="140">
   </a>
   <h1 align="center">The Knowledge Network</h1>
 
