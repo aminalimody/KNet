@@ -4,10 +4,9 @@
 <br />
 <div align="center">
   <a href="">
-    <img src="/front_end/src/images/grid_logo.png" alt="Logo" width="80" height="80">
+    <img src="./front_end/src/images/grid_logo.jpg" alt="Logo" width="80" height="80">
   </a>
-
-  <h3 align="center">The Knowledge Network</h3>
+  <h1 align="center">The Knowledge Network</h1>
 
   <p align="center">
    The Knowledge Network is a Decentralized Public Community platform that allows users to share scientific resources and publications founded in Trust.
