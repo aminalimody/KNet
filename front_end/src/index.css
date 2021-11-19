@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Space',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+/* save colortheme colors in variables */
+.color-theme-1 {
+  color: #3C005D;
+}
+.color-theme-2 {
+  color: #2471E0;
+}
+.color-theme-3 {
+  color: #00C281;
+}
+.color-theme-4 {
+  color: #FF8602;
+}
+.color-theme-5 {
+  color: #FF140C;
+}
+.color-theme {
+--medium-spring-green: #4ff792ff;
+--malachite: #37db79ff;
+--red-pigment: #e83023ff;
+--malachite-2: #0bd45bff;
+--purple-plum: #9d4cbaff;
+
+--ocean-green: #63c798ff;
+--middle-yellow-red: #ebb67aff;
+--glaucous: #6088b5ff;
+--rose-bonbon: #e84691ff;
+--yellow-orange: #fcb15bff;
+
+
+--cadmium-orange: #EC7F21ff;
+--midnight-green-eagle-green: #04525Fff;
+--arylide-yellow: #EBD66Dff;
+--metallic-sunburst: #A1924Dff;
+--maximum-blue-green: #31B6BDff;
+
+
+
+
+
+/* CSS HEX */
+--violet-crayola: #993a79ff;
+--magenta-haze: #a8528cff;
+--emerald: #67cf8aff;
+--medium-sea-green: #41b066ff;
+--blue-ncs: #238dc2ff;
+}
+
+
+body {
+  display: grid;
+  min-height: 100vh;
+
+}
+
+body::backdrop {
+  background-color: hsl(227, 61%, 26%);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
