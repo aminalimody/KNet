@@ -8,6 +8,7 @@ import {
   Snackbar,
   makeStyles,
 } from "@material-ui/core"
+import KFarm from "../KFarm"
 import { Token } from "../Main"
 import { CreateAsset } from "../../hooks"
 import { utils } from "ethers"
@@ -45,17 +46,17 @@ export const StakeForm = ({ token1, token2 }: StakeFormProps) => {
   const { notifications } = useNotifications()
 
   const classes = useStyles()
-
+  const [filetoUpload, setFiletoUpload] = useState<File>()
   const { send: stakeTokensSend, state: stakeTokensState } =
     CreateAsset(tokenAddress, AssetAddress)
 
   const formattedTokenBalance: number = tokenBalance
     ? parseFloat(formatUnits(tokenBalance, 18))
     : 0
-
-  const handleCreateAsset = () => {
-    const amountAsWei = utils.parseEther(amount.toString())
-    return CreateAsset()
+  const handleCreateAsset = async () => {
+    // upload the file from the input using uploadMetadataToIPFS
+    //get the file from the input
+    Kfarm.uploadMetadataToIPFS(filetoUpload)
   }
 
   const [amount, setAmount] =
@@ -98,7 +99,9 @@ export const StakeForm = ({ token1, token2 }: StakeFormProps) => {
 
   const hasZeroBalance = formattedTokenBalance === 0
   const hasZeroAmountSelected = parseFloat(amount.toString()) === 0
-
+  const setFiletoUploadfunc = (e) => {
+    setFiletoUpload(e.target.files[0])
+  }
   return (
     <>
       <div className={classes.container}>
@@ -110,13 +113,22 @@ export const StakeForm = ({ token1, token2 }: StakeFormProps) => {
           value={amount}
           onChange={setAmount}
           disabled={isMining || hasZeroBalance}
-        />z
+        />
+        <div>
+
+          Please upload your publication or enter the Doi of the publication
+          <br />
+
+
+          <input type="file" name="file" onChange={setFiletoUploadfunc} />
+          <input type="text" name="doi" />
+        </div>
         <Button
           color="primary"
           variant="contained"
           size="large"
           onClick={handleCreateAsset}
-          disabled={isMining || hasZeroAmountSelected}
+          disabled={isMining}
         >
           {isMining ? <CircularProgress size={26} /> : "Create"}
         </Button>

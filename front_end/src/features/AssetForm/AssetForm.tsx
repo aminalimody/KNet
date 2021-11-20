@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
       --maximum-blue-green: #31B6BDff;
         */
 
-export const AssetForm = ({ supportedTokens, AssetToken }: YourWalletProps) => {
+export const AssetForm = ({ supportedTokens, AssetToken }: YourWalletProps, _handleCreateAsset) => {
   // wtf is this? 
   // Reacts way of holding state between components 
   // Could do it without <number> 
@@ -62,17 +62,7 @@ export const AssetForm = ({ supportedTokens, AssetToken }: YourWalletProps) => {
         <div>
           {isConnected ? (
             <>
-              <div>
 
-                <form>
-                  Please upload your publication or enter the Doi of the publication
-                  <br />
-
-
-                  <input type="file" name="file" />
-                  <input type="text" name="doi" />
-                </form>
-              </div>
               <TabContext value={selectedTokenIndex.toString()}>
                 <TabList onChange={handleChange} aria-label="stake form tabs">
                   {supportedTokens.map((token, index) => {
@@ -94,7 +84,7 @@ export const AssetForm = ({ supportedTokens, AssetToken }: YourWalletProps) => {
                         />
                         {/* this is the same as */}
                         {/* The chainlink_defi props passing */}
-                        <StakeForm token1={supportedTokens[selectedTokenIndex]} token2={AssetToken} />
+                        <StakeForm token1={supportedTokens[selectedTokenIndex]} token2={AssetToken} handleCreateAsset={_handleCreateAsset} />
                       </div>
                     </TabPanel>
                   )

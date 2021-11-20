@@ -9,7 +9,7 @@ const useStyles = makeStyles(theme => ({
         alignItems: "center"
     },
     tokenImg: {
-        width: "32px"
+        height: "24px"
     },
     amount: {
         fontWeight: 700

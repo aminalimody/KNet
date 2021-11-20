@@ -21,17 +21,6 @@ import { Header } from "./Header"
 // For material UI
 // https://material-ui.com/styles/basics/
 const useStyles = makeStyles((theme) => ({
-    title: {
-        color: theme.palette.common.white,
-        textAlign: "center",
-        padding: theme.spacing(4),
-    },
-    container: {
-        padding: theme.spacing(4),
-        display: "flex",
-        justifyContent: "flex-end",
-        gap: theme.spacing(1)
-    },
     Main: {
         position: "absolute",
         top: "0%",
@@ -42,9 +31,7 @@ const useStyles = makeStyles((theme) => ({
         color: "white",
         zIndex: 1,
 
-        background: "linear-gradient(135deg, #147278, #174978, #2741a0 );",
 
-        padding: theme.spacing(4),
         width: "100%",
         height: "100%",
         //display: "flex",
@@ -69,18 +56,14 @@ export const Main = () => {
 
 
 
+            <Header />
 
             {isConnected ? (
                 <>
-                    <Header />
-                    <div className={classes.container}>
-                        <KFarm />
-                    </div>
+                    <KFarm />
                 </>
             ) : (
-                <div className={classes.container}>
-                    <Landing />
-                </div>
+                <Landing />
 
             )}
 
